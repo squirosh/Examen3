@@ -1,0 +1,16 @@
+type Padres {
+    id: ID!,
+    nombre: String,
+    direccion: String,
+    telefonoP: String,
+    telefonoS: String
+}
+
+type Query{
+    padres(count: Int):[Padres]
+    padre(id: ID): Padres
+}
+
+type Mutation {
+    createPadre(nombre: String!, direccion: String, telefonoP: String, telefonoS: String): Padres
+}
