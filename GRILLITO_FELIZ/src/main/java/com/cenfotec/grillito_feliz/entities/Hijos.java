@@ -12,22 +12,14 @@ public class Hijos implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "type", nullable = false)
-    private String type;
+    @Column(name = "plan", nullable = false)
+    private String plan;
 
-    @Column(name = "model_code", nullable = false)
-    private String modelCode;
+    @Column(name = "alergias", nullable = false)
+    private String alergias;
 
-    @Column(name = "brand_name")
-    private String brandName;
-    @Column(name = "launch_date")
-    private LocalDate launchDate;
-
-    private transient String formattedDate;
-
-    public String getFormattedDate() {
-        return getLaunchDate().toString();
-    }
+    @Column(name = "idPadre")
+    private int idPadre;
 
     public int getId() {
         return id;
@@ -37,39 +29,27 @@ public class Hijos implements Serializable {
         this.id = id;
     }
 
-    public String getType() {
-        return type;
+    public String getPlan() {
+        return plan;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setPlan(String plan) {
+        this.plan = plan;
     }
 
-    public String getModelCode() {
-        return modelCode;
+    public String getAlergias() {
+        return alergias;
     }
 
-    public void setModelCode(String modelCode) {
-        this.modelCode = modelCode;
+    public void setAlergias(String alergias) {
+        this.alergias = alergias;
     }
 
-    public String getBrandName() {
-        return brandName;
+    public int getIdPadre() {
+        return idPadre;
     }
 
-    public void setBrandName(String brandName) {
-        this.brandName = brandName;
-    }
-
-    public LocalDate getLaunchDate() {
-        return launchDate;
-    }
-
-    public void setLaunchDate(LocalDate launchDate) {
-        this.launchDate = launchDate;
-    }
-
-    public void setFormattedDate(String formattedDate) {
-        this.formattedDate = formattedDate;
+    public void setIdPadre(int idPadre) {
+        this.idPadre = idPadre;
     }
 }
