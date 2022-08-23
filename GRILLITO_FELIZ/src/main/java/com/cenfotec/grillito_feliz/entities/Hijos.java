@@ -11,6 +11,16 @@ public class Hijos implements Serializable {
     @Column(name = "ID", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @Column(name = "nombre", nullable = false)
+    private String nombre;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
     @Column(name = "plan", nullable = false)
     private String plan;
