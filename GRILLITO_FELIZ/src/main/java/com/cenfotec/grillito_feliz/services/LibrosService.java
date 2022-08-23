@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Component
 public class LibrosService implements LibrosServiceInterface{
@@ -40,5 +41,20 @@ public class LibrosService implements LibrosServiceInterface{
     public void saveAll(List<Libros> libros) {
         librosRepository.saveAll(libros);
 
+    }
+
+    public List<Libros> getAllLibros(int count) {
+        return
+                this.librosRepository.findAll().stream().limit(count).collect(Collectors.toList());
+    }
+    public Optional<Libros> getLibro(int id) {
+        return this.librosRepository.findById(id);
+    }
+    public Libros createLibro(String nombre, String idNinno) {
+
+        Libros libros = new Libros();
+        libros.setNombre(nombre);
+        libros.setIdNinno(Integer.parseInt(idNinno));
+        return this.librosRepository.save(libros);
     }
 }
