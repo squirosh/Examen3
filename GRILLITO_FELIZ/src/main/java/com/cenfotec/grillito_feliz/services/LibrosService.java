@@ -3,6 +3,7 @@ package com.cenfotec.grillito_feliz.services;
 import com.cenfotec.grillito_feliz.entities.Libros;
 import com.cenfotec.grillito_feliz.repositories.LibrosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -41,6 +42,11 @@ public class LibrosService implements LibrosServiceInterface{
     public void saveAll(List<Libros> libros) {
         librosRepository.saveAll(libros);
 
+    }
+
+    @Override
+    public void deleteById(int id) {
+         this.librosRepository.deleteById(id);
     }
 
     public List<Libros> getAllLibros(int count) {

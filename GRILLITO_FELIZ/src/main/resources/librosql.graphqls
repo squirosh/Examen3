@@ -10,5 +10,6 @@ type Query{
 }
 
 type Mutation {
-    createLibro(nombre: String!, idNinno: String):Libros
+    createLibro(nombre: String!, idNinno: String):Libros,
+    deleteLibro(id: ID!):String
 }

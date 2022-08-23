@@ -4,6 +4,7 @@ import com.cenfotec.grillito_feliz.entities.Libros;
 import com.cenfotec.grillito_feliz.services.LibrosService;
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -14,5 +15,10 @@ public class LibroMutation implements GraphQLMutationResolver {
 
     public Libros createLibro(String nombre, String idNinno) {
         return this.librosService.createLibro(nombre, idNinno);
+    }
+
+    public String deleteLibro(int id) {
+        this.librosService.deleteById(id);
+        return "True";
     }
 }

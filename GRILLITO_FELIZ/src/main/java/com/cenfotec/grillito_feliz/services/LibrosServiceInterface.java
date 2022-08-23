@@ -1,6 +1,7 @@
 package com.cenfotec.grillito_feliz.services;
 
 import com.cenfotec.grillito_feliz.entities.Libros;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,5 +17,6 @@ public interface LibrosServiceInterface {
     void saveLibro(Libros libro);
 
     void saveAll(List<Libros> libros);
+    void deleteById(int id);
 
 }
