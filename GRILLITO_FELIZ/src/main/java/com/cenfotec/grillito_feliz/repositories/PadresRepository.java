@@ -9,6 +9,7 @@ import java.util.Optional;
 @Repository
 public interface PadresRepository extends JpaRepository<Padres, Integer> {
     Optional<Padres> findByNombreContaining(String word);
+
     Optional<Padres> findById(Long aLong);
 }
 
